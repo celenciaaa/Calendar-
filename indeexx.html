@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layouts</title>
+  <style>
+    body {
+      background-color: #DEB887; /* light brown background */
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    .layout-wrapper {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .layout {
+      background: white; /* white layout box */
+      padding: 10px;
+      border: 2px solid #8B4513; /* darker brown border */
+      display: grid;
+      gap: 5px;
+      width: 250px;
+      height: 250px;
+      margin-top: 10px;
+    }
+
+    .box {
+      background: white; /* inside boxes white */
+      border: 1px solid #8B4513; /* darker border */
+    }
+
+    /* Layout 1 */
+    .layout1 {
+      grid-template-rows: 50px 1fr 50px;
+      grid-template-columns: 100px 1fr;
+    }
+    .layout1 .header { grid-column: 1 / span 2; }
+    .layout1 .sidebar { grid-row: 2; }
+    .layout1 .content { grid-row: 2; grid-column: 2; }
+    .layout1 .footer { grid-column: 1 / span 2; }
+
+    /* Layout 2 */
+    .layout2 {
+      grid-template-rows: 50px 1fr 50px;
+      grid-template-columns: 1fr 1fr 100px;
+    }
+    .layout2 .header { grid-column: 1 / span 3; }
+    .layout2 .main1 { grid-row: 2; }
+    .layout2 .main2 { grid-row: 2; }
+    .layout2 .sidebar { grid-row: 2; }
+    .layout2 .footer { grid-column: 1 / span 3; }
+
+    /* Layout 3 */
+    .layout3 {
+      grid-template-rows: 50px 1fr 50px;
+      grid-template-columns: 50px 1fr 50px;
+    }
+    .layout3 .circle1 {
+      border-radius: 50%;
+      grid-row: 1;
+      grid-column: 1;
+    }
+    .layout3 .header { grid-column: 2 / span 2; }
+    .layout3 .sidebar { grid-row: 2; grid-column: 1; }
+    .layout3 .content { grid-row: 2; grid-column: 2; }
+    .layout3 .footer { grid-column: 1 / span 3; }
+    .layout3 .circle2 {
+      border-radius: 50%;
+      grid-row: 3;
+      grid-column: 3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Layout 1 -->
+  <div class="layout-wrapper">
+    Layout 1
+    <div class="layout layout1">
+      <div class="box header"></div>
+      <div class="box sidebar"></div>
+      <div class="box content"></div>
+      <div class="box footer"></div>
+    </div>
+  </div>
+
+  <!-- Layout 2 -->
+  <div class="layout-wrapper">
+    Layout 2
+    <div class="layout layout2">
+      <div class="box header"></div>
+      <div class="box main1"></div>
+      <div class="box main2"></div>
+      <div class="box sidebar"></div>
+      <div class="box footer"></div>
+    </div>
+  </div>
+
+  <!-- Layout 3 -->
+  <div class="layout-wrapper">
+    Layout 3
+    <div class="layout layout3">
+      <div class="box circle1"></div>
+      <div class="box header"></div>
+      <div class="box sidebar"></div>
+      <div class="box content"></div>
+      <div class="box footer"></div>
+      <div class="box circle2"></div>
+    </div>
+  </div>
+</body>
+</html>
